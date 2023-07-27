@@ -1,0 +1,457 @@
+//#############################################
+// Logo
+
+.logo {
+  height: 4.5rem;
+  @media screen and(max-width: 37.5em) {
+    height: 3.5rem;
+  }
+}
+
+//#############################################
+// Navigation
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  margin: 2rem;
+  @media screen and(max-width: 37.5em) {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 2.5rem;
+      @media screen and(max-width: 37.5em) {
+        margin-left: 0.8rem;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 1rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+//#############################################
+// Header photo
+.header__photo-box {
+  display: flex;
+  justify-content: center;
+}
+
+.header-photo {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  @media screen and(max-width: 26.25em) {
+    padding: 0 1rem;
+  }
+}
+
+//#############################################
+// Typorgraphy
+
+.header__text-box {
+  padding: 0 22%;
+  @media screen and(max-width:56.25em) {
+    padding: 0 15%;
+  }
+  @media screen and(max-width: 37.5em) {
+    padding: 0 1rem;
+  }
+}
+
+.heading-primary {
+  font-size: 3.5rem;
+  line-height: 1.5;
+  color: var(--color-white);
+  font-weight: 700;
+  @media screen and(max-width: 37.5em) {
+    font-size: 3rem;
+  }
+}
+.heading-secondary {
+  font-size: 2.8rem;
+  line-height: 1.5;
+  color: var(--color-white);
+  font-weight: 700;
+  @media screen and(max-width: 37.5em) {
+    font-size: 2.4rem;
+  }
+}
+
+.heading-tertiary {
+  color: var(--color-white);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 400;
+  padding: 0 3rem;
+  @media screen and(max-width: 37.5em) {
+    font-size: 1.7rem;
+  }
+}
+
+.paragraph {
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  color: white;
+  @media screen and(max-width: 37.5em) {
+    font-size: 1.2rem;
+  }
+}
+//#############################################
+// Button
+
+.cta-btn {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  padding: 1.5rem 7rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-cyan),
+    var(--color-blue-light)
+  );
+  transition: all 0.4s;
+  &:hover {
+    background-image: linear-gradient(
+      var(--color-cyan) 100%,
+      var(--color-blue-light) 0
+    );
+    filter: brightness(105%);
+  }
+  @media screen and(max-width: 26.25em) {
+    margin: 0 auto;
+    width: 70%;
+    display: block;
+    padding: 1.5rem 2rem;
+  }
+}
+
+//#############################################
+// features
+
+.grid-2 {
+  margin-top: -25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 120rem;
+  gap: 10rem;
+  margin: 0 auto;
+  justify-content: center;
+  @media screen and(max-width:56.25em) {
+    gap: 5rem;
+  }
+  @media screen and(max-width:47em) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature {
+  text-align: center;
+  color: var(--color-white);
+  max-width: 35rem;
+  padding-block-end: 0 4rem;
+  &__icon {
+    width: auto;
+    height: 6rem;
+    margin-bottom: 1.5rem;
+  }
+  @media screen and(max-width:47em) {
+    max-width: 100%;
+    padding: 0 5rem;
+  }
+  @media screen and(max-width: 37.5em) {
+    padding: 0 1rem;
+  }
+}
+
+//#############################################
+// About
+
+.flex-container {
+  display: flex;
+  max-width: 120rem;
+  justify-content: space-around;
+  align-items: center;
+  @media screen and(max-width:47em) {
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+  }
+}
+
+.about {
+  &__photo-box {
+    width: 50%;
+    @media screen and(max-width:47em) {
+      width: auto;
+      padding: 0 4rem;
+    }
+  }
+  &__photo {
+    max-width: 100%;
+  }
+
+  &__text-box {
+    width: 40%;
+    @media screen and(max-width:47em) {
+      width: auto;
+      padding: 0 4rem;
+    }
+  }
+  &__link {
+    color: var(--color-cyan);
+    text-underline-offset: 8px;
+    display: flex;
+    gap: 3px;
+    &:hover {
+      color: var(--color-white);
+      animation: pulsate 0.9s infinite;
+    }
+
+    &:hover &-arrow {
+      filter: grayscale(1) brightness(130%);
+    }
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    gap: 0rem;
+  }
+  50% {
+    transform: scale(1.05);
+    gap: 0.7rem;
+  }
+  100% {
+    transform: scale(1);
+    gap: 0rem;
+  }
+}
+
+//#############################################
+// Testimonial
+
+.quote-box {
+  position: absolute;
+  left: -1rem;
+  top: -3rem;
+  display: block;
+}
+
+.quote-icon {
+  width: 5rem;
+}
+
+.testimonial {
+  position: relative;
+  flex: 0 0 23%;
+  background-color: var(--color-blue-dark-4);
+  border-radius: 4px;
+  padding: 3.5rem 2.5rem;
+  @media screen and(max-width: 56.25em) {
+    flex: 0 0 30%;
+  }
+
+  &__person {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    color: var(--color-white);
+  }
+
+  &__photo {
+    width: 3.5rem;
+    border-radius: 50%;
+  }
+
+  &__name {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+
+  &__position {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+//#############################################
+// form
+
+.form {
+  width: 70%;
+  background-color: var(--color-blue-dark-3);
+  padding: 3rem 5rem;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.4);
+  position: absolute;
+  transform: translatey(-40%);
+  @media screen and(max-width: 47em) {
+    padding: 3rem;
+  }
+  @media screen and(max-width: 37.5em) {
+    width: 90%;
+  }
+  &__input-box {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    @media screen and(max-width: 47em) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__input-email {
+    width: 60%;
+    border-radius: 4rem;
+    border: none;
+    padding: 1.5rem 3rem;
+    align-self: center;
+
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #9999997b;
+    }
+    @media screen and(max-width: 47em) {
+      width: 65%;
+    }
+    @media screen and(max-width: 26.25em) {
+      width: 90%;
+    }
+  }
+
+  &__btn {
+    width: 17rem;
+    font-size: 1.2rem;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 1s;
+    @media screen and(max-width: 47em) {
+      width: 65%;
+    }
+    @media screen and(max-width: 26.25em) {
+      width: 90%;
+    }
+  }
+}
+
+//#############################################
+// Footer
+
+.footer__logo {
+  height: 4.5rem;
+  width: auto;
+  margin-bottom: 3rem;
+  display: block;
+  @media screen and(max-width: 37.5em) {
+    padding: 0 4rem;
+  }
+}
+
+.location {
+  display: flex;
+  width: 24%;
+  margin-right: 4rem;
+  @media screen and(max-width: 37.5em) {
+    width: 100%;
+    margin-bottom: -1rem;
+  }
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.2rem;
+  @media screen and(max-width: 47em) {
+    gap: 3rem;
+  }
+  @media screen and(max-width: 37.5em) {
+    flex-direction: column;
+    padding: 2rem 4rem;
+    @media screen and(max-width: 26.25em) {
+      padding: 2rem 0rem;
+    }
+  }
+}
+
+.footer {
+  &__list {
+    list-style: none;
+
+    justify-content: space-around;
+    margin-right: 3rem;
+    @media screen and(max-width: 37.5em) {
+      margin-bottom: 1.5rem;
+      margin-right: 0;
+    }
+  }
+  &__item {
+    display: flex;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  &__link:hover {
+    font-weight: 700;
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: auto;
+    margin-right: 1.7rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 0.8rem;
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+    stroke: white;
+    color: white;
+
+    cursor: pointer;
+    display: block;
+    &:hover {
+      fill: var(--color-cyan);
+    }
+  }
+  @media screen and(max-width: 37.5em) {
+    justify-content: center;
+  }
+}
